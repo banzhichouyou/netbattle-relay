@@ -1,0 +1,17 @@
+# Render 部署配置（Blueprint）
+# 用法：把本项目（至少含 server.js / package.json / deploy/ 目录）推到 GitHub，
+#       然后 Render 控制台 → New → Blueprint → 选这个仓库 → Apply。
+# Render 会自动创建下面这个 Web Service 并分配一个公网地址，例如：
+#   https://netbattle-relay.onrender.com
+# 对应的 WebSocket 地址就是：wss://netbattle-relay.onrender.com
+services:
+  - type: web
+    name: netbattle-relay
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: "10000"

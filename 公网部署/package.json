@@ -1,0 +1,15 @@
+{
+  "name": "netbattle-relay",
+  "version": "1.0.0",
+  "description": "好友战争进化史 - 联机对战 WebSocket 中继服务器",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
